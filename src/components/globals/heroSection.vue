@@ -34,6 +34,9 @@ const closeVideoModal = () => {
           <a href="#" class="hero-link" @click.prevent="openVideoModal">
             ▶️ Ver Video Completo
           </a>
+          <RouterLink to="/planning" class="hero-link" @click.prevent="openVideoModal">
+            Empezar a planear
+          </RouterLink>
         </div>
       </div>
     </div>

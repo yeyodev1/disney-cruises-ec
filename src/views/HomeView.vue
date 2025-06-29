@@ -11,7 +11,6 @@ import HeroSection from '@/components/globals/heroSection.vue';
         <h2>Próxima Sección</h2>
       </div>
     </main>
-    <TheFooter />
   </div>
 </template>
 
