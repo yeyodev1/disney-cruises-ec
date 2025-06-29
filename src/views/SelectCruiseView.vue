@@ -10,6 +10,7 @@ import SearchFilters from '@/forms/SearchFilters.vue';
 import image1 from '@/assets/carousel/primer_foto_carousel.avif'
 import image2 from '@/assets/carousel/segunda_foto_carousel.avif'
 import image3 from '@/assets/carousel/tercer_foto_carousel.jpg'
+import CruiseResults from '@/components/cruises/CruiseResults.vue';
 
 const swiperModules = [Navigation, Pagination, Autoplay];
 
@@ -48,6 +49,7 @@ const carouselSlides = [
     <section class="filters-section">
         <SearchFilters />
     </section>
+     <CruiseResults />
 
     </div>
 </template>
@@ -111,6 +113,8 @@ const carouselSlides = [
   position: relative;
   z-index: 10;
   padding: 0 24px;
+  width: 1250px;
+  margin: 0 auto;
 }
 
 

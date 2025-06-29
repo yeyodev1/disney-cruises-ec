@@ -110,6 +110,7 @@ const panelAlignmentClass = computed(() => { if (openPanel.value === 'guests' ||
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
   margin-bottom: 16px;
   text-align: left;
+  color: $black;
 }
 
 .search-filters-bar {
