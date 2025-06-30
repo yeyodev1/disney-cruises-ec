@@ -7,9 +7,6 @@ import HeroSection from '@/components/globals/heroSection.vue';
   <div class="app-wrapper">
     <main class="main-content">
       <HeroSection />
-      <div class="container placeholder">
-        <h2>Próxima Sección</h2>
-      </div>
     </main>
   </div>
 </template>
