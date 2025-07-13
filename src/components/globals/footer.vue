@@ -6,7 +6,7 @@ const footerColumns = [
   {
     title: 'Navegación',
     links: [
-      { text: 'Nuestros Cruceros', href: '#' },
+      { text: 'Nuestros Cruceros', href: '/nuestros-cruceros' },
       { text: 'Destinos', href: '#' },
       { text: 'El Barco Mágico', href: '#' },
       { text: 'Ofertas Especiales', href: '#' },
@@ -47,7 +47,7 @@ const currentYear = computed(() => new Date().getFullYear());
           <h3 class="column-title">{{ column.title }}</h3>
           <ul class="column-links">
             <li v-for="link in column.links" :key="link.text">
-              <a :href="link.href" class="column-link">{{ link.text }}</a>
+              <RouterLink :to="link.href" class="column-link">{{ link.text }}</RouterLink>
             </li>
           </ul>
         </div>

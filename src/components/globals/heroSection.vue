@@ -95,11 +95,11 @@ const closeVideoModal = () => {
 .hero-content {
   position: relative;
   z-index: 3;
-  width: 100%;
+  width: 80%;
   height: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 24px;
+  padding: 16px;
   display: flex;
   flex-direction: column
 }

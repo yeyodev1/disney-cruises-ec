@@ -8,7 +8,7 @@ const topBarLinks = [
 ];
 
 const mainNavLinks = [
-  { text: 'Nuestros Cruceros', href: '#' },
+  { text: 'Nuestros Cruceros', href: '/nuestros-cruceros' },
   { text: 'Destinos', href: '#' },
   { text: 'El Barco Mágico', href: '#' },
 ];
@@ -25,10 +25,6 @@ const mainNavLinks = [
           <nav class="top-bar__nav">
             <a :href="topBarLinks[1].href" class="top-bar__link">{{ topBarLinks[1].text }}</a>
           </nav>
-          <div class="top-bar__search">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            <input type="search" placeholder="Buscar..." />
-          </div>
         </div>
       </div>
     </div>
@@ -39,9 +35,9 @@ const mainNavLinks = [
           <img :src="LogoDisney" alt="" srcset="">
         </a>
         <nav class="main-nav__links">
-          <a v-for="link in mainNavLinks" :key="link.text" :href="link.href" class="main-nav__link">
+          <RouterLink v-for="link in mainNavLinks" :key="link.text" :to="link.href" class="main-nav__link">
             {{ link.text }}
-          </a>
+          </RouterLink>
         </nav>
       </div>
     </div>

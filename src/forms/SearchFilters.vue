@@ -45,12 +45,10 @@ const updateGuests = (newGuests: { adults: number; children: number }) => {
   searchState.value.guests = newGuests;
 };
 
-// ✅ 3. Añadimos la función para actualizar los filtros avanzados
 const updateAdvancedFilters = (newFilters: { ports: string[], ships: string[], destinations: string[] }) => {
   searchState.value.advancedFilters = newFilters;
 };
 
-// --- LÓGICA DE WHATSAPP ---
 const openWhatsApp = () => { /* ...código sin cambios... */ };
 const panelAlignmentClass = computed(() => { if (openPanel.value === 'guests' || openPanel.value === 'moreFilters') { return '--align-right'; } return '--align-left'; });
 
@@ -99,20 +97,31 @@ const panelAlignmentClass = computed(() => { if (openPanel.value === 'guests' ||
 <style lang="scss" scoped>
 @use '@/styles/index.scss' as *;
 
+/**
+ * PRINCIPIO DE ESCALABILIDAD:
+ * Reutilizamos la variable SCSS para un punto de quiebre consistente.
+ */
+$breakpoint-desktop: 992px;
+
 .search-filters-wrapper {
-  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .explore-label {
   font-size: 20px;
   font-weight: 600;
-  color: $white;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
   margin-bottom: 16px;
   text-align: left;
-  color: $black;
+  color: $white;
 }
 
+/**
+ * REFACTOR 1: CAMBIO A FLEXBOX
+ * - Se cambia 'display: grid' por 'display: flex'.
+ * - Se establece un 'gap' para el espaciado entre elementos.
+ */
 .search-filters-bar {
   background-color: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
@@ -120,12 +129,26 @@ const panelAlignmentClass = computed(() => { if (openPanel.value === 'guests' ||
   border-radius: 12px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
   padding: 12px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr) 1.5fr auto;
+  display: flex;
   gap: 8px;
   align-items: stretch;
+
+  /**
+   * REFACTOR 3: LAYOUT MÓVIL
+   * En pantallas pequeñas, cambiamos la dirección a 'column' para
+   * apilar los filtros verticalmente. ¡Así de simple!
+   */
+  @media (max-width: ($breakpoint-desktop - 1px)) {
+    flex-direction: column;
+    gap: 12px;
+  }
 }
 
+/**
+ * REFACTOR 2: DISTRIBUCIÓN DE ESPACIO CON FLEX
+ * Usamos la propiedad 'flex' para controlar el tamaño de cada item
+ * en el layout de escritorio.
+ */
 .filter-item {
   background-color: $white;
   padding: 12px 16px;
@@ -139,9 +162,16 @@ const panelAlignmentClass = computed(() => { if (openPanel.value === 'guests' ||
   text-align: left;
   font-family: inherit;
 
+  // En desktop, cada uno de estos filtros ocupará una fracción igual del espacio.
+  @media (min-width: $breakpoint-desktop) {
+    flex: 1 1 0;
+  }
+
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    @media (min-width: $breakpoint-desktop) {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
   }
 
   &__main-label {
@@ -157,9 +187,18 @@ const panelAlignmentClass = computed(() => { if (openPanel.value === 'guests' ||
 }
 
 .filter-item--compound {
+  display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0;
+  background-color: $white;
+  border-radius: 8px;
+  border: 2px solid transparent; // Añadido para consistencia con .is-active
+  overflow: hidden;
+
+  // En desktop, este filtro será 1.5 veces más grande que los otros.
+  @media (min-width: $breakpoint-desktop) {
+    flex: 1.5 1 0;
+  }
 
   .compound-part {
     display: flex;
@@ -169,6 +208,9 @@ const panelAlignmentClass = computed(() => { if (openPanel.value === 'guests' ||
     flex-grow: 1;
     justify-content: center;
     height: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
 
     .icon {
       font-size: 20px;
@@ -192,13 +234,15 @@ const panelAlignmentClass = computed(() => { if (openPanel.value === 'guests' ||
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  flex-shrink: 0; // Evita que el botón se encoja.
 
   &:hover {
     background-color: darken($disney-blue-primary, 8%);
   }
 }
 
-.filter-item.is-active {
+.filter-item.is-active,
+.filter-item--compound.is-active {
   border-color: $color-primary;
 }
 
@@ -206,12 +250,19 @@ const panelAlignmentClass = computed(() => { if (openPanel.value === 'guests' ||
   position: absolute;
   top: calc(100% + 12px);
   z-index: 100;
+  width: auto;
 
   &.--align-left {
     left: 0;
   }
 
   &.--align-right {
+    right: 0;
+  }
+
+  @media (max-width: ($breakpoint-desktop - 1px)) {
+    width: 100%;
+    left: 0;
     right: 0;
   }
 }
