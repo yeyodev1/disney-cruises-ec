@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Header from './components/globals/header.vue'
 import Footer from './components/globals/footer.vue'
+import FloatingWhatsapp from './components/shared/FloatingWhatsapp.vue';
 </script>
 
 <template>
@@ -9,6 +10,7 @@ import Footer from './components/globals/footer.vue'
     <RouterView />
   </main>
   <Footer />
+  <FloatingWhatsapp/>
 </template>
 
 
