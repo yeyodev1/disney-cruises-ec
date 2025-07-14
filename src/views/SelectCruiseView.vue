@@ -114,7 +114,7 @@ const carouselSlides = [
   position: relative;
   z-index: 10;
   padding: 0 24px;
-  width: 1250px;
+  // width: 1250px;
   margin: 0 auto;
 }
 
