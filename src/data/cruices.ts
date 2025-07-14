@@ -119,4 +119,18 @@ export const cruiseShips: CruiseShip[] = [
       { icon: '⚓', label: 'Tonelaje', value: '144,000' },
     ],
   },
+  {
+    id: 'disney-destiny',
+    name: 'Disney Destiny',
+    tagline: 'Un viaje mágico donde el destino te lleva a nuevas aventuras.',
+    description:
+      'Inspirado en los sueños y el destino, este barco celebra la magia de Disney con temáticas de princesas, héroes y las historias más queridas de Disney.',
+    imageUrl:
+      'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/v/DCL_sh001_R4_xak_wN-3600x2026-D-16x9.jpg?2024-03-18T22:50:00+00:00',
+    highlights: [
+      { icon: '🗓️', label: 'Inaugurado', value: '2026' },
+      { icon: '👥', label: 'Huéspedes', value: '4,000' },
+      { icon: '⚓', label: 'Tonelaje', value: '144,000' },
+    ],
+  },
 ]
