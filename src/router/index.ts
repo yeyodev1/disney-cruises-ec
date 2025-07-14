@@ -28,6 +28,10 @@ const router = createRouter({
       component: CruiseDetailView,
     },
   ],
+  scrollBehavior() {
+    // Siempre vuelve al inicio cuando cambias de página
+    return { top: 0 }
+  },
 })
 
 export default router
