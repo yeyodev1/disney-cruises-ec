@@ -57,7 +57,6 @@ const selectMonth = (year: number, month: string) => {
   border: 1px solid #ddd;
   border-radius: 12px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-  width: 600px; // Ancho fijo para el panel
   color: $color-text-on-light;
 }
 

@@ -33,21 +33,8 @@ const mainFilters = [
 const openPanel = ref<string | null>(null);
 const filtersWrapperRef = ref(null);
 const togglePanel = (panelId: string) => {
-  // Mostramos en consola qué panel se intenta abrir/cerrar.
-  console.log(`[Debug] Se hizo clic en el filtro: "${panelId}"`);
-
-  const isCurrentlyOpen = openPanel.value === panelId;
-
-  if (isCurrentlyOpen) {
-    // Si el panel ya estaba abierto, lo cerramos.
-    openPanel.value = null;
-    console.log(`[Debug] Panel cerrado. El panel activo ahora es:`, openPanel.value);
-  } else {
-    // Si estaba cerrado o era otro, abrimos el nuevo.
-    openPanel.value = panelId;
-    console.log(`[Debug] Panel abierto. El panel activo ahora es:`, openPanel.value);
-  }
-};
+  openPanel.value = openPanel.value === panelId ? null : panelId;
+}
 const closePanel = () => openPanel.value = null;
 useClickOutside(filtersWrapperRef, closePanel);
 
@@ -64,7 +51,45 @@ const updateAdvancedFilters = (newFilters: { ports: string[], ships: string[], d
   searchState.value.advancedFilters = newFilters;
 };
 
-const openWhatsApp = () => { /* ...código sin cambios... */ };
+const openWhatsApp = () => {
+  const state = searchState.value;
+  let message = '¡Hola! Quisiera más información sobre un crucero con las siguientes características:\n\n';
+
+  // Añadimos los datos solo si son diferentes al valor por defecto
+  if (state.leaving !== 'Cualquier Fecha') {
+    message += `🗓️ Fecha de Salida: ${state.leaving}\n`;
+  }
+  if (state.sailing !== 'Cualquier Destino') {
+    message += `📍 Destino: ${state.sailing}\n`;
+  }
+  if (state.departing !== 'Cualquier Puerto') {
+    message += `⚓ Puerto de Salida: ${state.departing}\n`;
+  }
+
+  // Siempre añadimos los huéspedes
+  message += `👥 Huéspedes: ${state.guests.adults} Adultos, ${state.guests.children} Niños\n`;
+
+  // Añadimos los filtros avanzados si existen
+  if (state.advancedFilters.ships.length > 0) {
+    message += `\n🚢 Barcos Preferidos: ${state.advancedFilters.ships.join(', ')}\n`;
+  }
+  if (state.advancedFilters.destinations.length > 0) {
+    message += `🗺️ Destinos Específicos: ${state.advancedFilters.destinations.join(', ')}\n`;
+  }
+  if (state.advancedFilters.ports.length > 0) {
+    message += `⚓ Puertos Específicos: ${state.advancedFilters.ports.join(', ')}\n`;
+  }
+
+  message += '\n¡Gracias!';
+
+  // REEMPLAZA este número con tu número de WhatsApp en formato internacional (sin '+', ni '00')
+  const phoneNumber = '593997610852';
+  const encodedMessage = encodeURIComponent(message);
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+  // Abrimos WhatsApp en una nueva pestaña
+  window.open(whatsappUrl, '_blank');
+};
 const panelAlignmentClass = computed(() => { if (openPanel.value === 'guests' || openPanel.value === 'moreFilters') { return '--align-right'; } return '--align-left'; });
 
 </script>

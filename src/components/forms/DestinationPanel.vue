@@ -69,7 +69,6 @@ const selectDestination = (destination: Destination) => {
   border: 1px solid #ddd;
   border-radius: 12px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-  width: 800px;
   max-width: 95vw;
   color: $color-text-on-light;
   overflow: hidden; // Importante para que los bordes redondeados se apliquen al contenido
@@ -111,7 +110,7 @@ const selectDestination = (destination: Destination) => {
 
 .panel-content {
   display: flex;
-  height: 400px; // Altura fija para el panel de contenido
+
 }
 
 .tabs-sidebar {

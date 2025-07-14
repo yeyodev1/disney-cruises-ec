@@ -44,7 +44,6 @@ const selectPort = (port: string) => {
   border: 1px solid #ddd;
   border-radius: 12px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-  width: 400px; // Un panel más angosto es suficiente
   max-width: 90vw;
   color: $color-text-on-light;
 }
