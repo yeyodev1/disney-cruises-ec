@@ -17,6 +17,11 @@ export interface CruiseShip {
     label: string
     value: string
   }[]
+  gallery: {
+    id: number
+    url: string
+    alt: string
+  }[]
 }
 
 // Exportamos el array de datos para que sea importable desde cualquier componente.
@@ -34,6 +39,28 @@ export const cruiseShips: CruiseShip[] = [
       { icon: '👥', label: 'Huéspedes', value: '2,713' },
       { icon: '⚓', label: 'Tonelaje', value: '83,969' },
     ],
+    gallery: [
+      {
+        id: 1,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/magic/1205ZX_1397MS-16x9.jpg?2023-03-17T21:40:55+00:00',
+        alt: 'Vista del Disney Magic 1',
+      },
+      {
+        id: 2,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/magic/1205ZX_1397MS-16x9.jpg?2023-03-17T21:40:55+00:00',
+        alt: 'Vista del Disney Magic 2',
+      },
+      {
+        id: 3,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/magic/1205ZX_1397MS-16x9.jpg?2023-03-17T21:40:55+00:00',
+        alt: 'Vista del Disney Magic 3',
+      },
+      {
+        id: 4,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/magic/1205ZX_1397MS-16x9.jpg?2023-03-17T21:40:55+00:00',
+        alt: 'Vista del Disney Magic 4',
+      },
+    ],
   },
   {
     id: 'disney-adventure',
@@ -47,6 +74,28 @@ export const cruiseShips: CruiseShip[] = [
       { icon: '🗓️', label: 'Inaugurado', value: '2025' },
       { icon: '👥', label: 'Huéspedes', value: '4,000' },
       { icon: '⚓', label: 'Tonelaje', value: '144,000' },
+    ],
+    gallery: [
+      {
+        id: 1,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/adventure/D125_DH_mv_2-2-A_3529-16x9.jpg?2024-05-02T18:18:23+00:00',
+        alt: 'Vista del Disney Adventure 1',
+      },
+      {
+        id: 2,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/adventure/D125_DH_mv_2-2-A_3529-16x9.jpg?2024-05-02T18:18:23+00:00',
+        alt: 'Vista del Disney Adventure 2',
+      },
+      {
+        id: 3,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/adventure/D125_DH_mv_2-2-A_3529-16x9.jpg?2024-05-02T18:18:23+00:00',
+        alt: 'Vista del Disney Adventure 3',
+      },
+      {
+        id: 4,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/adventure/D125_DH_mv_2-2-A_3529-16x9.jpg?2024-05-02T18:18:23+00:00',
+        alt: 'Vista del Disney Adventure 4',
+      },
     ],
   },
   {
@@ -62,6 +111,28 @@ export const cruiseShips: CruiseShip[] = [
       { icon: '👥', label: 'Huéspedes', value: '2,713' },
       { icon: '⚓', label: 'Tonelaje', value: '84,130' },
     ],
+    gallery: [
+      {
+        id: 1,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/wonder/959939327_0505ZZ_0333DZ-16x9.jpg?2022-03-23T05:13:12+00:00',
+        alt: 'Vista del Disney Wonder 1',
+      },
+      {
+        id: 2,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/wonder/959939327_0505ZZ_0333DZ-16x9.jpg?2022-03-23T05:13:12+00:00',
+        alt: 'Vista del Disney Wonder 2',
+      },
+      {
+        id: 3,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/wonder/959939327_0505ZZ_0333DZ-16x9.jpg?2022-03-23T05:13:12+00:00',
+        alt: 'Vista del Disney Wonder 3',
+      },
+      {
+        id: 4,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/wonder/959939327_0505ZZ_0333DZ-16x9.jpg?2022-03-23T05:13:12+00:00',
+        alt: 'Vista del Disney Wonder 4',
+      },
+    ],
   },
   {
     id: 'disney-dream',
@@ -75,6 +146,28 @@ export const cruiseShips: CruiseShip[] = [
       { icon: '🗓️', label: 'Inaugurado', value: '2011' },
       { icon: '👥', label: 'Huéspedes', value: '4,000' },
       { icon: '⚓', label: 'Tonelaje', value: '129,690' },
+    ],
+    gallery: [
+      {
+        id: 1,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/dream/004087-DCL-Q3_Key-Visual-16x9.jpg?2023-02-07T12:44:12+00:00',
+        alt: 'Vista del Disney Dream 1',
+      },
+      {
+        id: 2,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/dream/004087-DCL-Q3_Key-Visual-16x9.jpg?2023-02-07T12:44:12+00:00',
+        alt: 'Vista del Disney Dream 2',
+      },
+      {
+        id: 3,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/dream/004087-DCL-Q3_Key-Visual-16x9.jpg?2023-02-07T12:44:12+00:00',
+        alt: 'Vista del Disney Dream 3',
+      },
+      {
+        id: 4,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/dream/004087-DCL-Q3_Key-Visual-16x9.jpg?2023-02-07T12:44:12+00:00',
+        alt: 'Vista del Disney Dream 4',
+      },
     ],
   },
   {
@@ -90,6 +183,28 @@ export const cruiseShips: CruiseShip[] = [
       { icon: '👥', label: 'Huéspedes', value: '4,000' },
       { icon: '⚓', label: 'Tonelaje', value: '129,750' },
     ],
+    gallery: [
+      {
+        id: 1,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/fantasy/archive/310221943_0108ZZ_0132DR-16x9.jpg?2022-03-23T05:13:10+00:00',
+        alt: 'Vista del Disney Fantasy 1',
+      },
+      {
+        id: 2,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/fantasy/archive/310221943_0108ZZ_0132DR-16x9.jpg?2022-03-23T05:13:10+00:00',
+        alt: 'Vista del Disney Fantasy 2',
+      },
+      {
+        id: 3,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/fantasy/archive/310221943_0108ZZ_0132DR-16x9.jpg?2022-03-23T05:13:10+00:00',
+        alt: 'Vista del Disney Fantasy 3',
+      },
+      {
+        id: 4,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/fantasy/archive/310221943_0108ZZ_0132DR-16x9.jpg?2022-03-23T05:13:10+00:00',
+        alt: 'Vista del Disney Fantasy 4',
+      },
+    ],
   },
   {
     id: 'disney-wish',
@@ -103,6 +218,28 @@ export const cruiseShips: CruiseShip[] = [
       { icon: '🗓️', label: 'Inaugurado', value: '2022' },
       { icon: '👥', label: 'Huéspedes', value: '4,000' },
       { icon: '⚓', label: 'Tonelaje', value: '144,000' },
+    ],
+    gallery: [
+      {
+        id: 1,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/wish/0818ZO_1773SD_JB-16x9.jpg?2023-04-13T14:10:41+00:00',
+        alt: 'Vista del Disney Wish 1',
+      },
+      {
+        id: 2,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/wish/0818ZO_1773SD_JB-16x9.jpg?2023-04-13T14:10:41+00:00',
+        alt: 'Vista del Disney Wish 2',
+      },
+      {
+        id: 3,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/wish/0818ZO_1773SD_JB-16x9.jpg?2023-04-13T14:10:41+00:00',
+        alt: 'Vista del Disney Wish 3',
+      },
+      {
+        id: 4,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/wish/0818ZO_1773SD_JB-16x9.jpg?2023-04-13T14:10:41+00:00',
+        alt: 'Vista del Disney Wish 4',
+      },
     ],
   },
   {
@@ -118,6 +255,28 @@ export const cruiseShips: CruiseShip[] = [
       { icon: '👥', label: 'Huéspedes', value: '4,000' },
       { icon: '⚓', label: 'Tonelaje', value: '144,000' },
     ],
+    gallery: [
+      {
+        id: 1,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/treasure/Disney_Treasure-w-Disclosure-UPDATE-16x9-16x9.jpg?2023-08-25T14:58:51+00:00',
+        alt: 'Vista del Disney Treasure 1',
+      },
+      {
+        id: 2,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/treasure/Disney_Treasure-w-Disclosure-UPDATE-16x9-16x9.jpg?2023-08-25T14:58:51+00:00',
+        alt: 'Vista del Disney Treasure 2',
+      },
+      {
+        id: 3,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/treasure/Disney_Treasure-w-Disclosure-UPDATE-16x9-16x9.jpg?2023-08-25T14:58:51+00:00',
+        alt: 'Vista del Disney Treasure 3',
+      },
+      {
+        id: 4,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/treasure/Disney_Treasure-w-Disclosure-UPDATE-16x9-16x9.jpg?2023-08-25T14:58:51+00:00',
+        alt: 'Vista del Disney Treasure 4',
+      },
+    ],
   },
   {
     id: 'disney-destiny',
@@ -131,6 +290,28 @@ export const cruiseShips: CruiseShip[] = [
       { icon: '🗓️', label: 'Inaugurado', value: '2026' },
       { icon: '👥', label: 'Huéspedes', value: '4,000' },
       { icon: '⚓', label: 'Tonelaje', value: '144,000' },
+    ],
+    gallery: [
+      {
+        id: 1,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/v/DCL_sh001_R4_xak_wN-3600x2026-D-16x9.jpg?2024-03-18T22:50:00+00:00',
+        alt: 'Vista del Disney Destiny 1',
+      },
+      {
+        id: 2,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/v/DCL_sh001_R4_xak_wN-3600x2026-D-16x9.jpg?2024-03-18T22:50:00+00:00',
+        alt: 'Vista del Disney Destiny 2',
+      },
+      {
+        id: 3,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/v/DCL_sh001_R4_xak_wN-3600x2026-D-16x9.jpg?2024-03-18T22:50:00+00:00',
+        alt: 'Vista del Disney Destiny 3',
+      },
+      {
+        id: 4,
+        url: 'https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-platform/parks-global-assets/disney-cruise-line/ships/v/DCL_sh001_R4_xak_wN-3600x2026-D-16x9.jpg?2024-03-18T22:50:00+00:00',
+        alt: 'Vista del Disney Destiny 4',
+      },
     ],
   },
 ]
