@@ -17,9 +17,9 @@ import FloatingWhatsapp from './components/shared/FloatingWhatsapp.vue';
 <style lang="scss">
 @use '@/styles/index.scss' as *;
 
-.main-content {
-  min-height: 100vh;
-}
+// .main-content {
+//   min-height: 100vh;
+// }
 
 .main-content.with-header {
   margin-top: 56px;
