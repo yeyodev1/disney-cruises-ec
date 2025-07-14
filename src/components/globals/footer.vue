@@ -7,24 +7,6 @@ const footerColumns = [
     title: 'Navegación',
     links: [
       { text: 'Nuestros Cruceros', href: '/nuestros-cruceros' },
-      { text: 'Destinos', href: '#' },
-      { text: 'El Barco Mágico', href: '#' },
-      { text: 'Ofertas Especiales', href: '#' },
-    ],
-  },
-  {
-    title: 'Soporte',
-    links: [
-      { text: 'Contáctanos', href: '#' },
-      { text: 'Preguntas Frecuentes', href: '#' },
-      { text: 'Ayuda', href: '#' },
-    ],
-  },
-  {
-    title: 'Legal',
-    links: [
-      { text: 'Términos y Condiciones', href: '#' },
-      { text: 'Política de Privacidad', href: '#' },
     ],
   },
 ];

@@ -9,8 +9,6 @@ const topBarLinks = [
 
 const mainNavLinks = [
   { text: 'Nuestros Cruceros', href: '/nuestros-cruceros' },
-  { text: 'Destinos', href: '#' },
-  { text: 'El Barco Mágico', href: '#' },
 ];
 </script>
 
