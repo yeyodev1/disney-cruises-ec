@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import PromoSection from '@/components/hero/promoSection.vue';
+import PromoSection from '@/components/hero/PromoSection.vue';
 
 import HeroImage from '@/assets/cruises/hero_our_cruises.jpg'
+import ItineraryResults from '@/components/content/ItineraryResults.vue';
+import FleetSlider from '@/components/content/FleetSlider.vue';
 </script>
 
 <template>
@@ -9,11 +11,13 @@ import HeroImage from '@/assets/cruises/hero_our_cruises.jpg'
     <PromoSection
       :image-src="HeroImage"
     />
+    <FleetSlider/>
 
     <div class="page-content">
       <h2>Más sobre Nuestros Cruceros</h2>
       <p>Aquí podríamos colocar una lista de los barcos, detalles sobre los camarotes, actividades a bordo, etc.</p>
     </div>
+    <ItineraryResults />
   </div>
 </template>
 

@@ -11,6 +11,7 @@ import image1 from '@/assets/carousel/primer_foto_carousel.avif'
 import image2 from '@/assets/carousel/segunda_foto_carousel.avif'
 import image3 from '@/assets/carousel/tercer_foto_carousel.jpg'
 import CruiseResults from '@/components/cruises/CruiseResults.vue';
+import ItineraryResults from '@/components/content/ItineraryResults.vue';
 
 const swiperModules = [Navigation, Pagination, Autoplay];
 
@@ -49,7 +50,7 @@ const carouselSlides = [
     <section class="filters-section">
         <SearchFilters />
     </section>
-     <CruiseResults />
+    <ItineraryResults/>
 
     </div>
 </template>
