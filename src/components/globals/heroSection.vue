@@ -144,11 +144,12 @@ const closeVideoModal = () => {
 }
 
 .search-filters-container {
-  padding-bottom: 5vh
+  padding-bottom: 5vh;
+  position: relative;
+  z-index: 5;
+
 }
 
-
-// --- --> 6. NUEVOS ESTILOS PARA EL MODAL DE VIDEO ---
 .video-modal-overlay {
   position: fixed; // Fijo sobre toda la ventana
   top: 0;

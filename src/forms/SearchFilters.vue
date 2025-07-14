@@ -32,7 +32,22 @@ const mainFilters = [
 // --- LÓGICA DE PANELES ---
 const openPanel = ref<string | null>(null);
 const filtersWrapperRef = ref(null);
-const togglePanel = (panelId: string) => openPanel.value = openPanel.value === panelId ? null : panelId;
+const togglePanel = (panelId: string) => {
+  // Mostramos en consola qué panel se intenta abrir/cerrar.
+  console.log(`[Debug] Se hizo clic en el filtro: "${panelId}"`);
+
+  const isCurrentlyOpen = openPanel.value === panelId;
+
+  if (isCurrentlyOpen) {
+    // Si el panel ya estaba abierto, lo cerramos.
+    openPanel.value = null;
+    console.log(`[Debug] Panel cerrado. El panel activo ahora es:`, openPanel.value);
+  } else {
+    // Si estaba cerrado o era otro, abrimos el nuevo.
+    openPanel.value = panelId;
+    console.log(`[Debug] Panel abierto. El panel activo ahora es:`, openPanel.value);
+  }
+};
 const closePanel = () => openPanel.value = null;
 useClickOutside(filtersWrapperRef, closePanel);
 
