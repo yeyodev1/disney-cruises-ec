@@ -7,7 +7,7 @@ const preFilledMessage = 'Hola, estoy interesado en uno de sus cruceros.';
 const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(preFilledMessage)}`;
 
 const topBarLinks = [
-  { text: 'Visita Disney.com', href: '#' },
+  { text: 'Visita Disney.com', href: 'https://disneycruise.disney.go.com/' },
   { text: 'Ayuda', href: whatsappUrl },
 ];
 </script>
