@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import LogoDisney from '@/assets/logo/disney-cruise-logo.svg';
 
+// Configuración de WhatsApp (misma que FloatingWhatsapp)
+const phoneNumber = '593997610852';
+const preFilledMessage = 'Hola, estoy interesado en uno de sus cruceros.';
+const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(preFilledMessage)}`;
+
 const topBarLinks = [
   { text: 'Visita Disney.com', href: '#' },
-
-  { text: 'Ayuda', href: '#' },
-];
-
-const mainNavLinks = [
-  { text: 'Nuestros Cruceros', href: '/nuestros-cruceros' },
+  { text: 'Ayuda', href: whatsappUrl },
 ];
 </script>
 
@@ -32,11 +32,6 @@ const mainNavLinks = [
         <a href="/" class="main-nav__logo">
           <img :src="LogoDisney" alt="" srcset="">
         </a>
-        <nav class="main-nav__links">
-          <RouterLink v-for="link in mainNavLinks" :key="link.text" :to="link.href" class="main-nav__link">
-            {{ link.text }}
-          </RouterLink>
-        </nav>
       </div>
     </div>
   </header>

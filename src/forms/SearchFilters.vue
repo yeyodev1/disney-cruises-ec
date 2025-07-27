@@ -115,7 +115,7 @@ const panelAlignmentClass = computed(() => { if (openPanel.value === 'guests' ||
         </button>
       </div>
 
-      <button class="view-dates-btn" @click="openWhatsApp">Ver Fechas</button>
+      <button class="view-dates-btn" @click="openWhatsApp">Contactar</button>
     </div>
 
     <div class="panel-container" :class="panelAlignmentClass">

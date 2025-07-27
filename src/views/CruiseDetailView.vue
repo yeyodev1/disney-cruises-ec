@@ -4,6 +4,7 @@ import { useRoute } from 'vue-router';
 
 import ShipGallery from '@/components/details/ShipGallery.vue';
 import { cruiseShips } from '@/data/cruices';
+import SearchFilters from '@/forms/SearchFilters.vue';
 
 const route = useRoute();
 
@@ -18,6 +19,7 @@ const currentShip = computed(() => {
       <header class="ship-header">
         <h1>{{ currentShip.name }}</h1>
         <p class="tagline">{{ currentShip.tagline }}</p>
+        <SearchFilters/>
       </header>
 
       <div class="content-layout">

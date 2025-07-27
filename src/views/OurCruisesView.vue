@@ -5,6 +5,7 @@ import HeroImage from '@/assets/cruises/hero_our_cruises.jpg'
 import ItineraryResults from '@/components/content/ItineraryResults.vue';
 import FleetSlider from '@/components/content/FleetSlider.vue';
 import DisneyDifference from '@/components/content/DisneyDifference.vue';
+import SearchFilters from '@/forms/SearchFilters.vue';
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import DisneyDifference from '@/components/content/DisneyDifference.vue';
     <PromoSection
       :image-src="HeroImage"
     />
+    <SearchFilters/>
     <FleetSlider/>
     <DisneyDifference/>
     <ItineraryResults />
