@@ -14,18 +14,6 @@ const topBarLinks = [
 
 <template>
   <header class="main-header">
-    <div class="top-bar">
-      <div class="container top-bar__container">
-        <div class="top-bar__start">
-          <a :href="topBarLinks[0].href" class="top-bar__link">{{ topBarLinks[0].text }}</a>
-        </div>
-        <div class="top-bar__end">
-          <nav class="top-bar__nav">
-            <a :href="topBarLinks[1].href" class="top-bar__link">{{ topBarLinks[1].text }}</a>
-          </nav>
-        </div>
-      </div>
-    </div>
 
     <div class="main-nav">
       <div class="container main-nav__container">
