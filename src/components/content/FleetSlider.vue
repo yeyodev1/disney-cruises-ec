@@ -94,7 +94,7 @@ onBeforeUnmount(() => {
 @use '@/styles/index.scss' as *;
 
 .fleet-slider {
-  background-color: #f7f8fa;
+  background-color: white;
   padding: 60px 0;
   border-top: 1px solid #e0e4e7;
   border-bottom: 1px solid #e0e4e7;

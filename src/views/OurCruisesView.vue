@@ -13,7 +13,9 @@ import SearchFilters from '@/forms/SearchFilters.vue';
     <PromoSection
       :image-src="HeroImage"
     />
-    <SearchFilters/>
+    <div class="search-filters-container">
+      <SearchFilters/>
+    </div>
     <FleetSlider/>
     <DisneyDifference/>
     <ItineraryResults />
@@ -27,5 +29,11 @@ import SearchFilters from '@/forms/SearchFilters.vue';
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 24px;
+}
+
+.search-filters-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 </style>

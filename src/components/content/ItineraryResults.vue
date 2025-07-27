@@ -13,6 +13,24 @@ const error = ref<string | null>(null);
 // Instancia del servicio de cruceros
 const cruisesService = new CruisesService();
 
+// Configuración de WhatsApp (misma que FloatingWhatsapp)
+const phoneNumber = '593997610852';
+
+// Función para enviar información del crucero a WhatsApp
+const sendToWhatsApp = (crucero: CruceroStory) => {
+  const message = `Hola, estoy interesado en el crucero "${crucero.content.titulo}".
+
+Detalles:
+🚢 Barco: ${crucero.content.barco}
+🏖️ Puerto: ${crucero.content.puerto}
+🌍 Región: ${crucero.content.region}
+
+¿Podrían proporcionarme más información sobre este crucero?`;
+  
+  const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+  window.open(whatsappUrl, '_blank');
+};
+
 // Función para cargar los cruceros desde Storyblok
 const loadCruceros = async () => {
   try {
@@ -66,11 +84,23 @@ onMounted(() => {
           :key="crucero.id"
           class="crucero-card"
         >
-          <h4>{{ crucero.content.titulo }}</h4>
-          <p><strong>Barco:</strong> {{ crucero.content.barco }}</p>
-          <p><strong>Puerto:</strong> {{ crucero.content.puerto }}</p>
-          <p><strong>Región:</strong> {{ crucero.content.region }}</p>
-          <p><strong>Slug:</strong> {{ crucero.slug }}</p>
+          <div class="crucero-info">
+            <h4>{{ crucero.content.titulo }}</h4>
+            <p><strong>Barco:</strong> {{ crucero.content.barco }}</p>
+            <p><strong>Puerto:</strong> {{ crucero.content.puerto }}</p>
+            <p><strong>Región:</strong> {{ crucero.content.region }}</p>
+            <p><strong>Slug:</strong> {{ crucero.slug }}</p>
+          </div>
+          
+          <div class="crucero-actions">
+            <button 
+              @click="sendToWhatsApp(crucero)"
+              class="whatsapp-button"
+              title="Consultar por WhatsApp"
+            >
+              💬 Consultar por WhatsApp
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -145,28 +175,67 @@ onMounted(() => {
   padding: 24px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   }
   
-  h4 {
-    color: #2c3e50;
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 16px;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 8px;
+  .crucero-info {
+    flex: 1;
+    
+    h4 {
+      color: #2c3e50;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 8px;
+    }
+    
+    p {
+      margin-bottom: 8px;
+      color: #555;
+      
+      strong {
+        color: #2c3e50;
+        font-weight: 600;
+      }
+    }
   }
   
-  p {
-    margin-bottom: 8px;
-    color: #555;
+  .crucero-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 16px;
+    border-top: 1px solid #f0f0f0;
     
-    strong {
-      color: #2c3e50;
+    .whatsapp-button {
+      background: #25d366;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
       font-weight: 600;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      
+      &:hover {
+        background: #20ba5a;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+      }
+      
+      &:active {
+        transform: translateY(0);
+      }
     }
   }
 }
@@ -179,9 +248,24 @@ onMounted(() => {
   
   .crucero-card {
     padding: 16px;
+    gap: 16px;
     
-    h4 {
-      font-size: 18px;
+    .crucero-info {
+      h4 {
+        font-size: 18px;
+      }
+    }
+    
+    .crucero-actions {
+      justify-content: center;
+      padding-top: 12px;
+      
+      .whatsapp-button {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+        font-size: 16px;
+      }
     }
   }
   
