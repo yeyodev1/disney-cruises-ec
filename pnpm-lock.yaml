@@ -11,6 +11,9 @@ importers:
       pinia:
         specifier: ^3.0.3
         version: 3.0.3(typescript@5.8.3)(vue@3.5.17(typescript@5.8.3))
+      storyblok-js-client:
+        specifier: ^7.1.1
+        version: 7.1.1
       swiper:
         specifier: ^11.2.10
         version: 11.2.10
@@ -1118,6 +1121,9 @@ packages:
   speakingurl@14.0.1:
     resolution: {integrity: sha512-1POYv7uv2gXoyGFpBCmpDVSNV74IfsWlDW216UPjbWufNf+bSU6GdbDsxdcxtfwb4xlI3yxzOTKClUosxARYrQ==}
     engines: {node: '>=0.10.0'}
+
+  storyblok-js-client@7.1.1:
+    resolution: {integrity: sha512-Z1ZQR3cIkRpfgD7Zv/0TSxfttfYN3xcj1iiJ3sgsun721pqKFQLROYAy1WsuVXawE/JVYH63zYNMzqDJBLmsJw==}
 
   strip-final-newline@4.0.0:
     resolution: {integrity: sha512-aulFJcD6YK8V1G7iRB5tigAP4TsHBZZrOV8pjV++zdUwmeV8uzbY7yn6h9MswN62adStNZFuCIx4haBnRuMDaw==}
@@ -2246,6 +2252,8 @@ snapshots:
   source-map-js@1.2.1: {}
 
   speakingurl@14.0.1: {}
+
+  storyblok-js-client@7.1.1: {}
 
   strip-final-newline@4.0.0: {}
 
